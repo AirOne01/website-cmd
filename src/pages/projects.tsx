@@ -1,10 +1,32 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import { useState } from "react";
+import Surreal from "surrealdb.js";
 
 import BasicPage from "~/components/BasicPage";
 import ProjectCard from "~/components/projects/ProjectCard";
 
+const db = new Surreal("http://127.0.0.1:8000/rpc");
+
+type Card = {
+  description: string;
+  id: string;
+  image: string;
+  tags: string[];
+  title: string;
+};
+
 const Projects: NextPage = () => {
+  const [cards, setCards] = useState<Card[]>([]);
+
+  dbActions()
+    .then((dbCards) => {
+      setCards(dbCards);
+    })
+    .catch(() => {
+      console.log("There was an error communicating with the database");
+    });
+
   return (
     <>
       <Head>
@@ -13,14 +35,17 @@ const Projects: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BasicPage>
-        <h1 className="text-3xl font-bold mb-8">My projects</h1>
+        <h1 className="mb-8 text-3xl font-bold">My projects</h1>
         <section>
-          <ProjectCard
-            title="This portfolio"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vitae ultricies lacinia, nunc nisl aliquam massa, eget aliquam nisl nisl sit amet lorem."
-            image="https://images.unsplash.com/photo-1677297680558-df5641e505ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1228&q=80"
-            tags={["React", "Next.js", "TailwindCSS"]}
-          />
+          {cards.map((card, index) => (
+            <ProjectCard
+              key={index}
+              title={card.title}
+              description={card.description}
+              image={card.image}
+              tags={card.tags}
+            />
+          ))}
         </section>
       </BasicPage>
     </>
@@ -28,3 +53,20 @@ const Projects: NextPage = () => {
 };
 
 export default Projects;
+
+async function dbActions(): Promise<Card[]> {
+  const {
+    SURREALDB_USER: user,
+    SURREALDB_PASS: pass,
+    SURREALDB_DB: dbName,
+    SURREALDB_NS: ns,
+  } = process.env;
+
+  await db.signin({
+    user: user ?? "root",
+    pass: pass ?? "root",
+  });
+  await db.use(ns ?? "ns", dbName ?? "db");
+
+  return await db.select("project");
+}
