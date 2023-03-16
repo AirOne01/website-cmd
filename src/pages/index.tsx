@@ -1,9 +1,8 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import { Fira_Code } from 'next/font/google'
-import FadeInText from "~/components/FadeInText";
+import Link from "next/link";
 
-const fira = Fira_Code({ subsets: ['latin'] })
+import BasicPage from "~/components/BasicPage";
 
 const Home: NextPage = () => {
   return (
@@ -13,9 +12,11 @@ const Home: NextPage = () => {
         <meta name="description" content="My portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#030014] to-[#000000] ${fira.className} text-white whitespace-pre-line`}>
-        <FadeInText>Hi there ! This page is currently a Work In Progress. Come back later.</FadeInText>
-      </main>
+      <BasicPage>
+        <h1 className="text-3xl font-bold">Erwann Lagouche&apos;s portfolio</h1>
+        <p className="mt-8">Welcome to my humble abode</p>
+        <Link href={"projects"} className="mt-6 uppercase blur_bold">Enter</Link>
+      </BasicPage>
     </>
   );
 };
