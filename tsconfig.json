@@ -19,7 +19,12 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     ".eslintrc.cjs",
@@ -27,7 +32,12 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.cjs",
-    "**/*.mjs"
+    "**/*.mjs",
+    ".next/types/**/*.ts",
+    "tailwind.config.js",
+    "tailwind.config.js",
+    "postcss.config.js",
+    "postcss.config.js"
   ],
   "exclude": ["node_modules"]
 }

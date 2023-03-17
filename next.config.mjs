@@ -16,20 +16,35 @@ const config = {
    *
    * @see https://github.com/vercel/next.js/issues/41980
    */
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
+  // i18n: {
+  //   locales: ["en"],
+  //   defaultLocale: "en",
+  // },
 
+  /**
+   * Allows the use of Unspash images to the project
+   */
   images: {
     remotePatterns: [
       {
         protocol: "https",
         hostname: "images.unsplash.com",
-        port: '',
+        port: "",
         pathname: "**",
-      }
+      },
     ],
+  },
+
+  swcMinify: true,
+
+  /**
+   * Experimental features
+   *
+   * `appDir: true` enables the Next13 app routing. See https://beta.nextjs.org/docs/routing/fundamentals
+   */
+  experimental: {
+    appDir: true,
+    serverComponentsExternalPackages: ['surrealdb.js']
   },
 };
 export default config;
