@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { type PostMetadataWithSlug } from "./PostMetadata";
-import addDays from 'date-fns/addDays';
+import addDays from "date-fns/addDays";
 
 const ProjectCard = ({
   slug,
@@ -10,10 +10,11 @@ const ProjectCard = ({
   image,
   date,
 }: PostMetadataWithSlug) => {
-  const mdSeconds = new Date(Date.parse(date));
+  const mdDate = new Date(Date.parse(date));
+  const currentDate = new Date(Date.now());
 
   return (
-    <div className="card w-96 bg-[#18171f]">
+    <div className="card w-96 border border-white">
       <figure className="aspect-video border border-[#272632] border-b-transparent">
         <Image
           src={`/posts-images/covers/${image}`}
@@ -22,16 +23,16 @@ const ProjectCard = ({
           alt={title}
         />
       </figure>
-      <div className="card-body">
-        <Link href={`blog/${slug}`}>
-          <h2 className="card-title">
-            {title}
-            {addDays(mdSeconds, 30) > new Date(Date.now()) ? (
-              <div className="badge-secondary badge">NEW</div>
-            ) : (
-              ""
-            )}
-          </h2>
+      <div className="card-body border-t border-white">
+        <Link href={`blog/${slug}`} className="flex w-full flex-row">
+          <h2 className="text-lg font-bold">{title}</h2>
+          {addDays(mdDate, 30) > currentDate ? (
+            <div className="flex justify-center items-center rounded-full border-2 border-white px-2 ml-4 text-sm">
+              NEW
+            </div>
+          ) : (
+            ""
+          )}
         </Link>
         <p>{description}</p>
         <div className="card-actions justify-end">
