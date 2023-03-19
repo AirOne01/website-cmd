@@ -14,18 +14,20 @@ export const metadata = {
 
 import "styles/dist.css";
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}) => {
   return (
     <html lang="en">
       <body
-        className={`flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#030014] to-[#000000] ${fira.className} whitespace-pre-line text-white`}
+        className={`min-h-screen bg-gradient-to-b from-[#030014] to-[#000000] ${fira.className} whitespace-pre-line text-white`}
       >
         {children}
       </body>
     </html>
   );
 }
+
+export default RootLayout;
