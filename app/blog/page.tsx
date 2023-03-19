@@ -1,11 +1,14 @@
 import ProjectCard from "app/blog/ProjectCard";
 import { readdirSync, readFileSync } from "fs";
+import { z } from "zod";
 
-interface PostMetadata {
-  title: string;
-  description: string;
-  date: string;
-}
+const PostMetadataSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  date: z.string()
+})
+
+type PostMetadata = z.infer<typeof PostMetadataSchema>
 
 interface PostMetadataWithSlug extends PostMetadata {
   slug: string;
@@ -51,7 +54,7 @@ function godForbid(content: string): PostMetadata {
       return acc;
     }, {});
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  return properties;
+  return PostMetadataSchema.parse(properties);
 }
 
 const Blog = () => {
