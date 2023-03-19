@@ -11,7 +11,7 @@ const getPostsContent = (slug: string): string => {
   const folder = "posts/";
   const file = `${folder}${slug}.md`;
   const content = readFileSync(file, "utf-8");
-  return content;
+  return content.split('---')[2] ?? '';
 };
 
 const Post = ({ params: { slug } }: Props) => {
@@ -25,6 +25,21 @@ const Post = ({ params: { slug } }: Props) => {
           h1: {
             props: {
               className: "text-3xl font-bold",
+            },
+          },
+          h2: {
+            props: {
+              className: "text-2xl font-bold",
+            },
+          },
+          b: {
+            props: {
+              className: "blur-bold",
+            },
+          },
+          a: {
+            props: {
+              className: "blur-link",
             },
           },
         },

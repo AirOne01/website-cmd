@@ -7,7 +7,7 @@ date: 19 March 2023
 
 # This is a heading
 
-lorem ipsum
+lorem **ipsum**
 
 [owo](https://owo.codes)
 

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.blur_bold {
+.blur-bold {
   filter: drop-shadow(0 0 0.25rem white);
+}
+
+.blur-link {
+  filter: drop-shadow(0 0 0.25rem #55f);
+  color: #bbf;
+  text-decoration: underline;
 }
