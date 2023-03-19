@@ -1,27 +1,30 @@
 import Image from "next/image";
-import { type Tag } from "~/db";
+import Link from "next/link";
 
 type ProjectCardProps = {
+  slug: string;
   title: string;
   description: string;
   image: string;
-  tags: Tag[];
+//   tags: Tag[];
 };
 
-const ProjectCard = ({ title, description, image, tags }: ProjectCardProps) => {
+const ProjectCard = ({ slug, title, description, image }: ProjectCardProps) => {
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
-      <figure>
+    <div className="card w-96 bg-[#18171f]">
+      <figure className="border border-[#272632] border-b-transparent aspect-video">
         <Image src={image} width={500} height={500} alt={title} />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">
-          {title}
-          {/* <div className="badge badge-secondary">NEW</div> */}
-        </h2>
+        <Link href={`blog/${slug}`}>
+          <h2 className="card-title">
+            {title}
+            {/* <div className="badge badge-secondary">NEW</div> */}
+          </h2>
+        </Link>
         <p>{description}</p>
         <div className="card-actions justify-end">
-          {tags.map((tag, index) => {
+          {/* {tags.map((tag, index) => {
             const tagColor = tag.color ? "#" + tag.color : undefined;
 
             return (
@@ -33,7 +36,7 @@ const ProjectCard = ({ title, description, image, tags }: ProjectCardProps) => {
                 {tag.title}
               </div>
             );
-          })}
+          })} */}
         </div>
       </div>
     </div>

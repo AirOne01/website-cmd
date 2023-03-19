@@ -6,10 +6,6 @@ import { z } from "zod";
  */
 const server = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]),
-  SURREALDB_USER: z.string(),
-  SURREALDB_PASS: z.string(),
-  SURREALDB_DB: z.string(),
-  SURREALDB_NS: z.string()
 });
 
 /**
@@ -28,10 +24,6 @@ const client = z.object({
  */
 const processEnv = {
   NODE_ENV: process.env.NODE_ENV,
-  SURREALDB_USER: process.env.SURREALDB_USER,
-  SURREALDB_PASS: process.env.SURREALDB_PASS,
-  SURREALDB_DB: process.env.SURREALDB_DB,
-  SURREALDB_NS: process.env.SURREALDB_NS,
   // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 };
 
