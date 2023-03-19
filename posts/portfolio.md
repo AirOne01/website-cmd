@@ -1,7 +1,8 @@
 ---
 title: This portfolio
 description: The website you're currently visiting 🤗
-date: 2023-18-03
+image: portfolio.png
+date: 19 March 2023
 ---
 
 # This is a heading

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "daisyui": "^2.51.4",
+    "date-fns": "^2.29.3",
     "markdown-to-jsx": "^7.2.0",
     "markdown-yaml-metadata-parser": "^3.0.0",
     "next": "^13.2.1",

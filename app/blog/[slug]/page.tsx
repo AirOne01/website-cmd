@@ -1,6 +1,5 @@
 import Markdown from "markdown-to-jsx";
 import { readFileSync } from "fs";
-import matter from "gray-matter";
 
 type Props = {
   params: {

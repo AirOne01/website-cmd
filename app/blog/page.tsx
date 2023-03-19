@@ -1,18 +1,6 @@
 import ProjectCard from "app/blog/ProjectCard";
 import { readdirSync, readFileSync } from "fs";
-import { z } from "zod";
-
-const PostMetadataSchema = z.object({
-  title: z.string(),
-  description: z.string(),
-  date: z.string()
-})
-
-type PostMetadata = z.infer<typeof PostMetadataSchema>
-
-interface PostMetadataWithSlug extends PostMetadata {
-  slug: string;
-}
+import { PostMetadataSchema, type PostMetadata, type PostMetadataWithSlug } from "./PostMetadata";
 
 const getPostsMetadata = (): PostMetadataWithSlug[] => {
   const folder = "posts/";
@@ -22,12 +10,13 @@ const getPostsMetadata = (): PostMetadataWithSlug[] => {
   const posts: PostMetadataWithSlug[] = mdPosts.map((fileName) => {
     // const content = "---\ntitle: Hello\ndescription: World\ndate: 2021-01-01\n---\n# Hello World";
     const content = readFileSync(`${folder}/${fileName}`, "utf-8");
-    const { title, description, date } = godForbid(content);
+    const { title, description, date, image } = godForbid(content);
 
     return {
       title,
       description,
       date,
+      image,
       slug: fileName.replace(".md", ""),
     };
   });
@@ -62,12 +51,13 @@ const Blog = () => {
     <main className="flex flex-col items-center justify-center">
       <h1 className="mb-8 text-3xl font-bold">Blog posts</h1>
       <section className="flex gap-10">
-        {getPostsMetadata().map(({ slug, title, description }, index) => (
+        {getPostsMetadata().map(({ slug, title, description, date, image }, index) => (
           <ProjectCard
             slug={slug}
             title={title}
             description={description}
-            image={""}
+            image={image}
+            date={date}
             key={index}
           />
         ))}

@@ -12,6 +12,7 @@ specifiers:
   autoprefixer: ^10.4.14
   concurrently: ^7.6.0
   daisyui: ^2.51.4
+  date-fns: ^2.29.3
   eslint: ^8.34.0
   eslint-config-next: ^13.2.1
   markdown-to-jsx: ^7.2.0
@@ -31,6 +32,7 @@ specifiers:
 
 dependencies:
   daisyui: 2.51.4_j7yt3jd32cwenjqavrrga47yr4
+  date-fns: 2.29.3
   markdown-to-jsx: 7.2.0_react@18.2.0
   markdown-yaml-metadata-parser: 3.0.0
   next: 13.2.4_biqbaboplfbrettd7655fr4n2y
@@ -834,7 +836,6 @@ packages:
   /date-fns/2.29.3:
     resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
     engines: {node: '>=0.11'}
-    dev: true
 
   /debug/3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
