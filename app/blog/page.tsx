@@ -3,7 +3,7 @@ import { readdirSync, readFileSync } from "fs";
 import { PostMetadataSchema, type PostMetadata, type PostMetadataWithSlug } from "./PostMetadata";
 
 const getPostsMetadata = (): PostMetadataWithSlug[] => {
-  const folder = "posts/";
+  const folder = "public/posts/";
   const files = readdirSync(folder);
   const mdPosts = files.filter((file) => file.endsWith(".md"));
 
