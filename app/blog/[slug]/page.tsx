@@ -1,7 +1,6 @@
 import Markdown from "markdown-to-jsx";
 import { resolve } from "path";
 import { readFile } from "fs/promises";
-import Loading from "./loading";
 
 type Props = {
   params: {
@@ -18,40 +17,38 @@ const getPostsContent = async (slug: string): Promise<string> => {
 };
 
 const Post = async ({ params: { slug } }: Props) => {
-  // const content = await getPostsContent(slug);
-  await new Promise((resolve) => setTimeout(resolve, 1));
+  const content = await getPostsContent(slug);
 
   return (
-    // <Markdown
-    //   options={{
-    //     wrapper: "article",
-    //     overrides: {
-    //       h1: {
-    //         props: {
-    //           className: "text-3xl font-bold",
-    //         },
-    //       },
-    //       h2: {
-    //         props: {
-    //           className: "text-2xl font-bold",
-    //         },
-    //       },
-    //       b: {
-    //         props: {
-    //           className: "blur-bold",
-    //         },
-    //       },
-    //       a: {
-    //         props: {
-    //           className: "blur-link",
-    //         },
-    //       },
-    //     },
-    //   }}
-    // >
-    //   {content}
-    // </Markdown>
-    <Loading />
+    <Markdown
+      options={{
+        wrapper: "article",
+        overrides: {
+          h1: {
+            props: {
+              className: "text-3xl font-bold",
+            },
+          },
+          h2: {
+            props: {
+              className: "text-2xl font-bold",
+            },
+          },
+          b: {
+            props: {
+              className: "blur-bold",
+            },
+          },
+          a: {
+            props: {
+              className: "blur-link",
+            },
+          },
+        },
+      }}
+    >
+      {content}
+    </Markdown>
   );
 };
 
