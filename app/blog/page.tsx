@@ -1,5 +1,6 @@
 import ProjectCard from "app/blog/ProjectCard";
 import { readdirSync, readFileSync } from "fs";
+import { resolve } from "path";
 import { PostMetadataSchema, type PostMetadata, type PostMetadataWithSlug } from "./PostMetadata";
 
 const getPostsMetadata = (): PostMetadataWithSlug[] => {
@@ -9,7 +10,7 @@ const getPostsMetadata = (): PostMetadataWithSlug[] => {
 
   const posts: PostMetadataWithSlug[] = mdPosts.map((fileName) => {
     // const content = "---\ntitle: Hello\ndescription: World\ndate: 2021-01-01\n---\n# Hello World";
-    const path = `${folder}/${fileName}`;
+    const path = resolve(`${folder}/${fileName}`);
     console.log(path);
     const content = readFileSync(path, "utf-8");
     const { title, description, date, image } = godForbid(content);

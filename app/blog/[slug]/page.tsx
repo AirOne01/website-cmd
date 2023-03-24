@@ -1,5 +1,6 @@
 import Markdown from "markdown-to-jsx";
 import { readFileSync } from "fs";
+import { resolve } from "path";
 
 type Props = {
   params: {
@@ -9,8 +10,8 @@ type Props = {
 
 const getPostsContent = (slug: string): string => {
   const folder = "public/posts/";
-  const file = `${folder}${slug}.md`;
-  const content = readFileSync(file, "utf-8");
+  const path = resolve(`${folder}${slug}.md`);
+  const content = readFileSync(path, "utf-8");
   return content.split('---')[2] ?? '';
 };
 
