@@ -1,7 +1,11 @@
 import ProjectCard from "app/blog/ProjectCard";
 import { readdirSync, readFileSync } from "fs";
 import { resolve } from "path";
-import { PostMetadataSchema, type PostMetadata, type PostMetadataWithSlug } from "./PostMetadata";
+import {
+  PostMetadataSchema,
+  type PostMetadata,
+  type PostMetadataWithSlug,
+} from "./PostMetadata";
 
 const getPostsMetadata = (): PostMetadataWithSlug[] => {
   const folder = "public/posts";
@@ -30,7 +34,7 @@ const getPostsMetadata = (): PostMetadataWithSlug[] => {
 // Please don't pay attention to this function
 // I feel like I'm doing something wrong
 function godForbid(content: string): PostMetadata {
-  // parse properties betwee --- and ---
+  // parse properties between --- and ---
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const parts = content.split("---")[1]!;
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -55,16 +59,18 @@ const Blog = () => {
       <main className="flex flex-col items-center justify-center">
         <h1 className="mb-8 text-3xl font-bold">Blog posts</h1>
         <section className="flex gap-10">
-          {getPostsMetadata().map(({ slug, title, description, date, image }, index) => (
-            <ProjectCard
-              slug={slug}
-              title={title}
-              description={description}
-              image={image}
-              date={date}
-              key={index}
-            />
-          ))}
+          {getPostsMetadata().map(
+            ({ slug, title, description, date, image }, index) => (
+              <ProjectCard
+                slug={slug}
+                title={title}
+                description={description}
+                image={image}
+                date={date}
+                key={index}
+              />
+            )
+          )}
         </section>
       </main>
     );

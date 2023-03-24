@@ -14,11 +14,7 @@ export const metadata = {
 
 import "styles/dist.css";
 
-const RootLayout = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body
@@ -28,6 +24,6 @@ const RootLayout = ({
       </body>
     </html>
   );
-}
+};
 
 export default RootLayout;
