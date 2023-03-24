@@ -8,7 +8,7 @@ type Props = {
 };
 
 const getPostsContent = (slug: string): string => {
-  const folder = "posts/";
+  const folder = "public/posts/";
   const file = `${folder}${slug}.md`;
   const content = readFileSync(file, "utf-8");
   return content.split('---')[2] ?? '';
