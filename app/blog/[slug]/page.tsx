@@ -1,6 +1,6 @@
 import Markdown from "markdown-to-jsx";
-import { readFileSync } from "fs";
 import { resolve } from "path";
+import { readFile } from "fs/promises";
 
 type Props = {
   params: {
@@ -8,15 +8,16 @@ type Props = {
   };
 };
 
-const getPostsContent = (slug: string): string => {
+const getPostsContent = async (slug: string): Promise<string> => {
   const folder = "public/posts/";
   const path = resolve(`${folder}${slug}.md`);
-  const content = readFileSync(path, "utf-8");
-  return content.split('---')[2] ?? '';
+  const content = await readFile(path, "utf-8");
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  return content.split("---")[2] ?? "";
 };
 
-const Post = ({ params: { slug } }: Props) => {
-  const content = getPostsContent(slug);
+const Post = async ({ params: { slug } }: Props) => {
+  const content = await getPostsContent(slug);
 
   return (
     <Markdown
