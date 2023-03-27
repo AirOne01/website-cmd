@@ -6,7 +6,8 @@
     "build": "tailwindcss ./styles/globals.css --output ./styles/dist.css && next build",
     "dev": "concurrently \"next dev --turbo\" \"tailwindcss --input ./styles/globals.css --output ./styles/dist.css --watch\"",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "daisyui": "^2.51.4",
@@ -30,6 +31,7 @@
     "@typescript-eslint/parser": "^5.53.0",
     "autoprefixer": "^10.4.14",
     "concurrently": "^7.6.0",
+    "cypress": "^12.8.1",
     "eslint": "^8.34.0",
     "eslint-config-next": "^13.2.1",
     "postcss": "^8.4.21",
