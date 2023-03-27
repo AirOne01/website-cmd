@@ -20,7 +20,7 @@ const Spinner = () => {
     return () => clearInterval(intervalID);
   }, [shuffle])
 
-  return <span className="text-pink-400 text-3xl">{frame}</span>
+  return <span className="text-pink-400 text-2xl">{frame}</span>
 };
 
 export default Spinner;

@@ -14,21 +14,20 @@ const ProjectCard = ({
   const currentDate = new Date(Date.now());
 
   return (
-    <div className="relative flex flex-col rounded-md md:w-96 border border-[#333] bg-black mx-4">
-      <figure className="aspect-video rounded-t-md">
+    <div className="card w-96 border border-white">
+      <figure className="aspect-video border border-[#272632] border-b-transparent">
         <Image
           src={`/posts-images/covers/${image}`}
           width={500}
-          height={281}
+          height={500}
           alt={title}
-          className="w-full h-full object-cover"
         />
       </figure>
-      <div className="flex flex-col p-4 gap-2 border-t border-[#333]">
+      <div className="card-body border-t border-white">
         <Link href={`blog/${slug}`} className="flex w-full flex-row">
           <h2 className="text-lg font-bold">{title}</h2>
           {addDays(mdDate, 30) > currentDate ? (
-            <div className="flex justify-center items-center rounded-full border-2 border-[#333] px-2 ml-4 text-sm">
+            <div className="flex justify-center items-center rounded-full border-2 border-white px-2 ml-4 text-sm">
               NEW
             </div>
           ) : (
@@ -36,7 +35,7 @@ const ProjectCard = ({
           )}
         </Link>
         <p>{description}</p>
-        <div className="flex flex-wrap items-start gap-2 justify-end">
+        <div className="card-actions justify-end">
           {/* {tags.map((tag, index) => {
             const tagColor = tag.color ? "#" + tag.color : undefined;
 
