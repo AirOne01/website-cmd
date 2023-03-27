@@ -11,7 +11,7 @@ const Error = () => {
           <h2 className="card-title">There was an error :-/</h2>
           <p className="opacity-25">{getSplash()}</p>
           <div className="card-actions justify-end">
-            <Link href="/blog">
+            <Link href="/">
               <button className="btn-primary btn">Go back</button>
             </Link>
           </div>
