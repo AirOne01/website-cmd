@@ -3,25 +3,15 @@ import Image from "next/image";
 
 const BlogLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex min-h-screen w-full flex-col text-lg">
-      <header className="flex w-full justify-between p-4">
-        <section className="whitespace-pre-line leading-tight">
-          <Link href={"/"} className="blur-bold">Erwann lagouche</Link><br />
-          <span className="text-[#555] text-sm">Lyon, France</span>
-        </section>
-        <nav className="pr-4">
-          <Link href={"/"} className="blur-bold">
-            Index
-          </Link>
-          <Link href={"/blog"} className="blur-bold ml-4">
-            Blog
-          </Link>
-        </nav>
-      </header>
+    <div className="flex min-h-screen flex-col">
+      <nav className="blur-bold flex grow-0 items-center justify-evenly">
+        <Link href={"/"}>Main page</Link>
+        <Link href={"/blog"}>Blog</Link>
+      </nav>
       <main className="flex min-h-full grow flex-col items-center justify-center">
         {children}
       </main>
-      <footer className="sm:flex hidden justify-between border-t border-[#333] p-4">
+      <footer className="flex grow-0 justify-between bg-gradient-to-b from-black to-[#141318] p-4">
         <p>Copyright © 2023 Erwann Lagouche - All right reserved</p>
         <Link href={"https://github.com/AirOne01"} target="_blank">
           <Image
