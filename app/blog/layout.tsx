@@ -21,7 +21,7 @@ const BlogLayout = ({ children }: { children: React.ReactNode }) => {
       <main className="flex min-h-full grow flex-col items-center justify-center">
         {children}
       </main>
-      <footer className="flex justify-between border-t border-[#333] p-4">
+      <footer className="sm:flex hidden justify-between border-t border-[#333] p-4">
         <p>Copyright © 2023 Erwann Lagouche - All right reserved</p>
         <Link href={"https://github.com/AirOne01"} target="_blank">
           <Image
