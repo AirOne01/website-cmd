@@ -19,8 +19,9 @@ const ProjectCard = ({
         <Image
           src={`/posts-images/covers/${image}`}
           width={500}
-          height={500}
+          height={281}
           alt={title}
+          className="w-full h-full object-cover"
         />
       </figure>
       <div className="flex flex-col p-4 gap-2 border-t border-[#333]">
