@@ -14,8 +14,8 @@ const ProjectCard = ({
   const currentDate = new Date(Date.now());
 
   return (
-    <div className="card w-96 border border-white">
-      <figure className="aspect-video border border-[#272632] border-b-transparent">
+    <div className="card w-96 border border-[#333333] bg-black">
+      <figure className="aspect-video">
         <Image
           src={`/posts-images/covers/${image}`}
           width={500}
@@ -23,11 +23,11 @@ const ProjectCard = ({
           alt={title}
         />
       </figure>
-      <div className="card-body border-t border-white">
+      <div className="card-body border-t border-[#333333]">
         <Link href={`blog/${slug}`} className="flex w-full flex-row">
           <h2 className="text-lg font-bold">{title}</h2>
           {addDays(mdDate, 30) > currentDate ? (
-            <div className="flex justify-center items-center rounded-full border-2 border-white px-2 ml-4 text-sm">
+            <div className="flex justify-center items-center rounded-full border-2 border-[#333333] px-2 ml-4 text-sm">
               NEW
             </div>
           ) : (
