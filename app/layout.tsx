@@ -18,7 +18,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body
-        className={`min-h-screen bg-gradient-to-b from-[#030014] to-[#000000] ${fira.className} whitespace-pre-line text-white`}
+        className={`min-h-screen bg-black ${fira.className} whitespace-pre-line text-white`}
       >
         {children}
       </body>
