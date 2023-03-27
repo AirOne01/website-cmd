@@ -7,7 +7,7 @@
     "dev": "concurrently \"next dev --turbo\" \"tailwindcss --input ./styles/globals.css --output ./styles/dist.css --watch\"",
     "lint": "next lint",
     "start": "next start",
-    "cypress": "cypress open"
+    "cypress": "concurrently \"next dev --turbo\" \"tailwindcss --input ./styles/globals.css --output ./styles/dist.css --watch\" \"cypress open\""
   },
   "dependencies": {
     "daisyui": "^2.51.4",
