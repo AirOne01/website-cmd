@@ -1,6 +1,6 @@
 "use client";
 
-import getSplash from "app/errorSplash";
+import { getErrorSplash } from "app/splashes";
 import Link from "next/link";
 
 const Error = () => {
@@ -9,7 +9,7 @@ const Error = () => {
       <div className="card z-50 w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">There was an error :-/</h2>
-          <p className="opacity-25">{getSplash()}</p>
+          <p className="opacity-25">{getErrorSplash()}</p>
           <div className="card-actions justify-end">
             <Link href="/blog">
               <button className="btn-primary btn">Go back</button>

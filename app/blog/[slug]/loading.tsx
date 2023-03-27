@@ -1,4 +1,4 @@
-import getSplash from "app/loadingSplash";
+import { getLoadingSplash } from "app/splashes";
 import Spinner from "./Spinner";
 
 export default function Loading() {
@@ -9,7 +9,7 @@ export default function Loading() {
           <h2 className="card-title">
             <Spinner /> Loading...
           </h2>
-          <p className="opacity-25">{getSplash()}</p>
+          <p className="opacity-25">{getLoadingSplash()}</p>
         </div>
       </div>
     </div>
