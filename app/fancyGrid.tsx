@@ -134,13 +134,15 @@ const FancyGrid = () => {
   }, [shuffle]);
 
   return (
-    <div className="absolute flex h-screen w-screen items-center justify-center">
+    <div className="absolute left-0 top-0 flex h-screen w-screen items-center justify-center">
       {Array.from({ length: 7 }).map((_, i) => (
         <div key={i} className="flex flex-col">
           {Array.from({ length: 7 }).map((_, j) => (
             <div
               key={j}
-              className={`h-12 w-12 border transition-colors duration-300 opacity-50 ${state[i]![j] ?? "border-transparent"}`}
+              className={`h-12 w-12 border opacity-50 transition-colors duration-300 ${
+                state[i]![j] ?? "border-transparent"
+              }`}
             />
           ))}
         </div>

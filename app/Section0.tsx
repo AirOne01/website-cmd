@@ -3,9 +3,9 @@ import FancyGrid from "./fancyGrid";
 
 const Section0 = () => {
   return (
-    <section className="snap-center h-screen">
+    <section className="relative h-screen snap-center">
       <FancyGrid />
-      <main className="flex min-h-screen w-full flex-col items-center justify-center">
+      <main className="absolute left-0 top-0 flex min-h-screen w-full flex-col items-center justify-center">
         <h1 className="text-center text-3xl font-bold">
           Erwann Lagouche&apos;s portfolio
         </h1>
