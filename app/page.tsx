@@ -4,7 +4,7 @@ import Section1 from "./Section1";
 import Section2 from "./Section2";
 
 const Home: NextPage = () => (
-  <div className="snap-y snap-mandatory overflow-y-scroll h-screen w-screen">
+  <div className="scroll-smooth snap-y snap-mandatory overflow-y-scroll h-screen w-screen">
     <Section0 />
     <Section1 />
     <Section2 />
