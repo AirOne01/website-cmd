@@ -1,16 +1,14 @@
 import { type NextPage } from "next";
-import Link from "next/link";
+import Section0 from "./Section0";
+import Section1 from "./Section1";
+import Section2 from "./Section2";
 
-const Home: NextPage = () => {
-  return (
-    <main className="flex flex-col items-center justify-center min-h-screen w-full">
-      <h1 className="text-3xl font-bold text-center">Erwann Lagouche&apos;s portfolio</h1>
-      <p className="mt-8">Welcome to my humble abode</p>
-      <Link href={"blog"} className="blur-bold mt-6 uppercase">
-        Enter
-      </Link>
-    </main>
-  );
-};
+const Home: NextPage = () => (
+  <div className="scroll-smooth snap-y snap-mandatory overflow-y-scroll h-screen w-screen">
+    <Section0 />
+    <Section1 />
+    <Section2 />
+  </div>
+);
 
 export default Home;
