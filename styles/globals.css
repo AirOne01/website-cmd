@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .blur-bold {
-  filter: drop-shadow(0 0 0.25rem white);
+  filter: drop-shadow(0 0 0.25rem currentcolor);
 }
 
 .blur-link {
-  filter: drop-shadow(0 0 0.25rem #55f);
+  filter: drop-shadow(0 0 0.25rem currentcolor);
   color: #bbf;
   text-decoration: underline;
 }

@@ -4,7 +4,8 @@ import Link from "next/link";
 const Section1 = () => (
   <section className="flex h-screen snap-center flex-col items-center justify-center text-4xl font-extrabold">
     <div className="flex h-1/2 w-full items-center justify-start">
-      <div className="flex h-full w-1/2 flex-col items-center justify-center bg-[#9D2600] text-black">
+      <div className="flex h-full w-1/2 flex-col items-center justify-center bg-[#ff7243] text-black">
+        {/* ff7243 */}
         <h1 className="pb-12 text-6xl">Main techs used</h1>
         <div className="flex flex-col items-center gap-6">
           <ul className="flex gap-8">
@@ -161,14 +162,14 @@ const Section1 = () => (
             </tr>
           </tbody>
         </table> */}
-        <div className="flex w-2/3">
+        <div className="flex max-w-[3/4] text-3xl">
           <p className="h-full bg-white pr-4 text-right text-black">
             Age
             <br />
             Based in
             <br />
             Interests
-            <br /><br/>
+            <br />
             Community
             <br/>
             Enjoys
@@ -178,11 +179,9 @@ const Section1 = () => (
             <br />
             / Lyon, France
             <br />
-            / VR, future technologies, AI
+            / VR, AI
             <br />
-            / blabla
-            <br />
-            / Member of <Link href="https://github.com/codelab-chads" className="blur-bold">Codelab</Link>
+            / Member of <Link href="https://github.com/codelab-chads" className="text-[#ff7243] blur-bold">Codelab</Link>
             <br />
             / Long walks on the beach
           </p>
