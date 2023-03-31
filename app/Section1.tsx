@@ -154,6 +154,10 @@ const Section1 = () => (
             Community
             <br/>
             Enjoys
+            <br />
+            Contact
+            <br />
+            Git
           </p>
           <p className="h-fit whitespace-pre-line pl-4">
             / 20 years old
@@ -165,6 +169,10 @@ const Section1 = () => (
             / Member of <Link href="https://github.com/codelab-chads" className="text-[#ff7243] blur-bold">Codelab</Link>
             <br />
             / Long walks on the beach
+            <br />
+            / <Link href={"mailto://erwann.lagouche@gmail.com"}>erwann.lagouche@gmail.com</Link>
+            <br />
+            / <Link href="https://github.com/AirOne01" className="text-[#ff7243] blur-bold">gh/AirOne01</Link>
           </p>
         </div>
       </div>
