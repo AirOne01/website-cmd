@@ -14,21 +14,25 @@ const ProjectCard = ({
   const currentDate = new Date(Date.now());
 
   return (
-    <div className="relative flex flex-col rounded-md md:w-96 border border-[#333] bg-black mx-4">
+    <div className="relative mx-4 flex flex-col rounded-md border border-[#333] bg-black md:w-96">
       <figure className="aspect-video rounded-t-md">
-        <Image
-          src={`/posts-images/covers/${image}`}
-          width={500}
-          height={281}
-          alt={title}
-          className="w-full h-full object-cover"
-        />
+        {image ? (
+          <Image
+            src={`/posts-images/covers/${image}`}
+            width={500}
+            height={281}
+            alt={title}
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          ""
+        )}
       </figure>
-      <div className="flex flex-col p-4 gap-2 border-t border-[#333]">
+      <div className="flex flex-col gap-2 border-t border-[#333] p-4">
         <Link href={`blog/${slug}`} className="flex w-full flex-row">
           <h2 className="text-lg font-bold">{title}</h2>
           {addDays(mdDate, 30) > currentDate ? (
-            <div className="flex justify-center items-center rounded-full border-2 border-[#333] px-2 ml-4 text-sm">
+            <div className="ml-4 flex items-center justify-center rounded-full border-2 border-[#333] px-2 text-sm">
               NEW
             </div>
           ) : (
@@ -36,7 +40,7 @@ const ProjectCard = ({
           )}
         </Link>
         <p>{description}</p>
-        <div className="flex flex-wrap items-start gap-2 justify-end">
+        <div className="flex flex-wrap items-start justify-end gap-2">
           {/* {tags.map((tag, index) => {
             const tagColor = tag.color ? "#" + tag.color : undefined;
 

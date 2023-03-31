@@ -3,7 +3,7 @@ import { z } from "zod";
 const PostMetadataSchema = z.object({
   title: z.string(),
   description: z.string(),
-  image: z.string(),
+  image: z.string().optional(),
   date: z.string()
 })
 
