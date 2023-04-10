@@ -6,12 +6,6 @@ import { z } from "zod";
  */
 const server = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]),
-  FIREBASE_APIKEY: z.string().min(1),
-  FIREBASE_AUTHDOMAIN: z.string().min(1),
-  FIREBASE_PROJECTID: z.string().min(1),
-  FIREBASE_STORAGEBUCKET: z.string().min(1),
-  FIREBASE_MESSAGINGSENDERID: z.string().min(1),
-  FIREBASE_APPID: z.string().min(1),
 });
 
 /**
@@ -30,12 +24,6 @@ const client = z.object({
  */
 const processEnv = {
   NODE_ENV: process.env.NODE_ENV,
-  FIREBASE_APIKEY: process.env.FIREBASE_APIKEY,
-  FIREBASE_AUTHDOMAIN: process.env.FIREBASE_AUTHDOMAIN,
-  FIREBASE_PROJECTID: process.env.FIREBASE_PROJECTID,
-  FIREBASE_STORAGEBUCKET: process.env.FIREBASE_STORAGEBUCKET,
-  FIREBASE_MESSAGINGSENDERID: process.env.FIREBASE_MESSAGINGSENDERID,
-  FIREBASE_APPID: process.env.FIREBASE_APPID,
 };
 
 // Don't touch the part below
