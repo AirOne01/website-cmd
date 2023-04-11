@@ -24,7 +24,6 @@ const client = z.object({
  */
 const processEnv = {
   NODE_ENV: process.env.NODE_ENV,
-  // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 };
 
 // Don't touch the part below
