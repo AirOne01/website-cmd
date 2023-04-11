@@ -44,7 +44,7 @@ const config = {
    */
   experimental: {
     appDir: true,
-    serverComponentsExternalPackages: ['surrealdb.js']
+    // serverComponentsExternalPackages: ['surrealdb.js']
   },
 };
 export default config;
