@@ -11,6 +11,7 @@ export const metadata = {
   keywords: ["portfolio", "next.js", "tailwindcss"],
   colorScheme: "dark",
 };
+import "styles/globals.css";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
