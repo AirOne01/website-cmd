@@ -12,8 +12,6 @@ export const metadata = {
   colorScheme: "dark",
 };
 
-import "styles/dist.css";
-
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
