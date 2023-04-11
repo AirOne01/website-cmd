@@ -11,8 +11,7 @@ export const metadata = {
   keywords: ["portfolio", "next.js", "tailwindcss"],
   colorScheme: "dark",
 };
-
-import "styles/dist.css";
+import "styles/globals.css";
 import WipAlert from "./WipAlert";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
