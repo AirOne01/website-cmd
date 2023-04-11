@@ -9,11 +9,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mikro-orm/core": "^5.6.16",
+    "@mikro-orm/mongodb": "^5.6.16",
     "daisyui": "^2.51.4",
     "date-fns": "^2.29.3",
     "markdown-to-jsx": "^7.2.0",
     "markdown-yaml-metadata-parser": "^3.0.0",
-    "next": "^13.2.1",
+    "next": "^13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "zod": "^3.20.6"
