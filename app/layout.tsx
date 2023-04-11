@@ -18,10 +18,10 @@ import WipAlert from "./WipAlert";
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <WipAlert />
       <body
         className={`min-h-screen w-full bg-black ${fira.className} whitespace-pre-line text-white`}
       >
+        <WipAlert />
         {children}
       </body>
     </html>
