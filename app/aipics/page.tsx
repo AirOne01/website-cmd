@@ -1,18 +1,16 @@
 import Image from "next/image";
-import { type MongoDriver } from "@mikro-orm/mongodb"
+import { type MongoDriver } from "@mikro-orm/mongodb";
 import { MikroORM } from "@mikro-orm/core";
 
-export async function getStaticProps() {
+const AiPics = async () => {
   const orm = await MikroORM.init<MongoDriver>({
-    entitiesTs: ['./src/entities'], // path to our TS entities (src), relative to `baseDir`
+    entitiesTs: ['~/entities'], // path to our TS entities
     dbName: 'aipics',
     type: 'mongo',
   });
-
   console.log(orm.em);
-}
 
-const AiPics = () => <div className="grid grid-cols-7 gap-4 p-4">
+  return <div className="grid grid-cols-7 gap-4 p-4">
     {Array.from({ length: 100 }, (_, i) => i).map((i) => (
       <Image
         alt="Boilerplate image"
@@ -22,6 +20,7 @@ const AiPics = () => <div className="grid grid-cols-7 gap-4 p-4">
         height={300}
       />
     ))}
-  </div>;
+  </div>
+};
 
 export default AiPics;
